@@ -1,0 +1,16 @@
+name: Build Deploy
+on:
+  push:
+jobs:
+  build-docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Notification
+        if: cancelled() == false
+        uses: ryadom/telegram_notification@597e214
+        with:
+          token: ${{ secrets.TELEGRAM_API_TOKEN }}
+          chat: "72314531"
+          status: ${{ job.status }}
+
