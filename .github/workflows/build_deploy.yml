@@ -8,7 +8,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Notification
         if: cancelled() == false
-        uses: ryadom/telegram_notification@193a18a45e89b9a8038dc47ff62d2625f8688c12
+        uses: ryadom/telegram_notification@d063b7e7c16bf2387dba7aab61d3c646664e2adc
         with:
           token: ${{ secrets.TELEGRAM_API_TOKEN }}
           chat: "72314531"
