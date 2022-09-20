@@ -21,7 +21,7 @@ jobs:
         run: echo '${{ toJSON(matrix) }}'
       - name: Notification
         if: cancelled() == false
-        uses: ryadom/telegram_notification@907a186901e4a01011209a7778fd7796f1b05014
+        uses: ryadom/telegram_notification@b4fcd7265c8c8cd501904df05dc543fbc6b656bc
         with:
           token: ${{ secrets.TELEGRAM_API_TOKEN }}
           chat: "72314531"
