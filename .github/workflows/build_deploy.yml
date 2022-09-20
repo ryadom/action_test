@@ -6,6 +6,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Dump GitHub context
+        id: github_context_step
+        run: echo '${{ toJSON(github) }}'
+      - name: Dump job context
+        run: echo '${{ toJSON(job) }}'
+      - name: Dump steps context
+        run: echo '${{ toJSON(steps) }}'
+      - name: Dump runner context
+        run: echo '${{ toJSON(runner) }}'
+      - name: Dump strategy context
+        run: echo '${{ toJSON(strategy) }}'
+      - name: Dump matrix context
+        run: echo '${{ toJSON(matrix) }}'
       - name: Notification
         if: cancelled() == false
         uses: ryadom/telegram_notification@9bc4971e6c44d51eb6ea20fb165c5160200f1b01
@@ -13,4 +26,3 @@ jobs:
           token: ${{ secrets.TELEGRAM_API_TOKEN }}
           chat: "72314531"
           status: ${{ job.status }}
-
