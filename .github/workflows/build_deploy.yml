@@ -2,8 +2,16 @@ name: Build Deploy
 on:
   push:
 jobs:
-  build-docker:
+  failedjob:
     runs-on: ubuntu-latest
+    steps:
+      - name: Notification
+        run: exit 1
+  notify:
+    runs-on: ubuntu-latest
+    if: ${{ always() }}
+    needs:
+     - failedjob
     steps:
       - uses: actions/checkout@v3
       - name: Dump GitHub context
