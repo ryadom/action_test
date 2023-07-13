@@ -20,7 +20,7 @@ jobs:
       - name: Dump matrix context
         run: echo '${{ toJSON(matrix) }}'
       - name: Sending failure notification
-        uses: ryadom/action_telegram_send_message@0599f7fcf7abee639f411f7eb7260a38cfc40218
+        uses: ryadom/action_telegram_send_message@01392047d71989b4daab7bc39b62e25447eed425
         with:
           token: ${{ secrets.TELEGRAM_API_TOKEN }}
           chat: "-1001594725259"
