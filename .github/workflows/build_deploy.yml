@@ -19,12 +19,12 @@ jobs:
         run: echo '${{ toJSON(strategy) }}'
       - name: Dump matrix context
         run: echo '${{ toJSON(matrix) }}'
-      - name: Message
-        uses: ryadom/action_telegram_send_message@f17528c8cfb86b7fee1329a2e0c755beb5f16f02
+      - name: Sending failure notification
+        uses: ryadom/action_telegram_send_message@main
         with:
           token: ${{ secrets.TELEGRAM_API_TOKEN }}
-          chat: "72314531"
-          message: "hello loh"
+          chat: "-1001594725259"
+          message: "🙁 Failed to create frontend2 Release ${{ github.run_number }}.\nProbably there are no new changes to release."
       - name: Notification
         if: cancelled() == false
         uses: ryadom/action_telegram_build_notification@2790f6a742c0bb3392e8504d84aa897225d8327a
