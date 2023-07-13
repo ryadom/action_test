@@ -24,7 +24,7 @@ jobs:
         with:
           token: ${{ secrets.TELEGRAM_API_TOKEN }}
           chat: "-1001594725259"
-          message: "🙁 Failed to create frontend2 Release ${{ github.run_number }}.\nProbably there are no new changes to release."
+          message: "🙁 Failed to create frontend2 Release ${{ github.run_number }}\nProbably there are no new changes to release"
       - name: Notification
         if: cancelled() == false
         uses: ryadom/action_telegram_build_notification@main
