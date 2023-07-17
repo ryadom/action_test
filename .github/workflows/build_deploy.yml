@@ -23,7 +23,7 @@ jobs:
         uses: ryadom/action_telegram_send_message@01392047d71989b4daab7bc39b62e25447eed425
         with:
           token: ${{ secrets.TELEGRAM_API_TOKEN }}
-          chat: "-1001594725259"
+          chat: "72314531"
           message: "🙁 Failed to create frontend2 Release ${{ github.run_number }}\nProbably there are no new changes to release"
       - name: Notification
         if: cancelled() == false
