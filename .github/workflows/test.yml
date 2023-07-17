@@ -1,0 +1,11 @@
+name: Release Merge
+on:
+  issue_comment:
+    types: [created]
+jobs:
+  create_pull_request:
+    runs-on: ubuntu-latest
+    if: github.event.issue.pull_request
+    steps:
+      - uses: actions/checkout@v3
+        run: echo ${{ github.event }}
