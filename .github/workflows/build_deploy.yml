@@ -27,7 +27,7 @@ jobs:
           message: "🙁 Failed to create frontend2 Release ${{ github.run_number }}\nProbably there are no new changes to release"
       - name: Notification
         if: cancelled() == false
-        uses: ryadom/action_telegram_build_notification@main
+        uses: ryadom/action_telegram_build_notification@copilot/fix-broken-links-in-main-js
         with:
           token: ${{ secrets.TELEGRAM_API_TOKEN }}
           chat: "72314531"
